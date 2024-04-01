@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { BsFillBagFill } from "react-icons/bs";
 import CartContext from "@/context/CartContext.ts";
 import { FaUserCircle } from "react-icons/fa";
@@ -14,11 +14,7 @@ const boxStyle = {
 };
 
 const Header: React.FC = () => {
-  const { cart, setCart } = useContext(CartContext);
-
-  useEffect(() => {
-    console.log(`Card is: `, cart)
-  }, [cart])
+  const { cart } = useContext(CartContext);
 
   const links: { title: string; url: string }[] = [
     {

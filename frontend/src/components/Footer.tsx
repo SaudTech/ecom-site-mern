@@ -1,5 +1,4 @@
 import React from "react";
-import { FaInstagram, FaStrikethrough, FaTiktok, FaTwitter, FaYoutube } from "react-icons/fa";
 import { SiExpress, SiMui, SiNodedotjs, SiReact, SiReactrouter, SiTailwindcss, SiUpwork } from "react-icons/si";
 
 const Footer: React.FC = () => {
@@ -91,6 +90,7 @@ const Footer: React.FC = () => {
           <SiNodedotjs />
           <SiReactrouter />
           <SiReact />
+          <SiMui />
           <SiTailwindcss />
         </div>
         <div className="w-[70%] py-3 bg-primary text-primary-foreground text-xs text-center flex justify-center gap-24 items-center">
