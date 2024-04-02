@@ -28,7 +28,7 @@ const ProductItem: React.FC<{ product: Product }> = ({ product }) => {
       <CardFooter className="py-4 flex justify-between">
         <span>{product.name}</span>
         <div className="flex gap-2 items-center">
-          <span>${product.price}</span>
+          <span>₹{product.price}</span>
           <Button variant={"outline"} onClick={() => addToCart(product)}>
             <IoBagAdd size={20} />
           </Button>

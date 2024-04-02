@@ -4,6 +4,8 @@ import App from "./App.tsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Frontpage from "@/pages/Frontpage.tsx";
+import ProductPage from "@/pages/ProductPage.tsx";
+import CartPage from "@/pages/CartPage.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -16,16 +18,21 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             path="/product/:productName"
             element={
               <Suspense fallback={<div>Loading...</div>}>
-                <h1>Product page</h1>
+                <ProductPage />
+              </Suspense>
+            }
+          />
+
+          <Route
+            path="/cart"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <CartPage />
               </Suspense>
             }
           />
         </Route>
       </Routes>
     </BrowserRouter>
-
-    <div className="min-h-screen">
-      <App />
-    </div>
   </React.StrictMode>
 );

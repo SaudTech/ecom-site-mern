@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { BsFillBagFill } from "react-icons/bs";
 import CartContext from "@/context/CartContext.ts";
 import { FaUserCircle } from "react-icons/fa";
+import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 
 const boxStyle = {
   padding: "30px",
@@ -14,6 +16,7 @@ const boxStyle = {
 };
 
 const Header: React.FC = () => {
+  const nav = useNavigate();
   const { cart } = useContext(CartContext);
 
   const links: { title: string; url: string }[] = [
@@ -35,7 +38,8 @@ const Header: React.FC = () => {
     <header className="w-full flex border-b text-primary-foreground border-black">
       <div className="h-full text-center w-2/4">
         <div
-          className="uppercase text-xl font-semibold bg-primary h-full"
+          onClick={() => nav("/")}
+          className="uppercase cursor-pointer text-xl font-semibold bg-primary h-full"
           style={boxStyle}
         >
           t shop
@@ -59,12 +63,12 @@ const Header: React.FC = () => {
             <FaUserCircle size={20} />
             Log In
           </div>
-          <div className="relative cursor-pointer">
+          <Button onClick={() => nav('/cart')} className="relative cursor-pointer">
             <BsFillBagFill size={20} />
             <span className="text-[10px] pt-1 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-primary">
               {cart.length}
             </span>
-          </div>
+          </Button>
         </div>
       </div>
     </header>
